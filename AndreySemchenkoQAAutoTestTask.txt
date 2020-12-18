@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main
+{
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+
+        // Задание 1
+        // Примечание: в зависимости от среды разработки десятичная часть числа вводится либо после запятой, либо после точки.
+        System.out.print("Введите число: ");
+        if (in.nextDouble()>7)
+            System.out.println("Привет!");
+
+        // Задание 2
+        in.nextLine();
+        System.out.print("Введите имя: ");
+        if (in.nextLine().equals("Вячеслав"))
+            System.out.println("Привет, Вячеслав!");
+        else
+            System.out.println("Нет такого имени!");
+
+        // Задание 3
+        // Примечание: десятичная часть числа вводится после точки.
+        System.out.print("Введите минимум 2 числа, разделённых пробелами: ");
+        double[] numArr = Arrays.stream(in.nextLine().split(" ")).mapToDouble(Double::parseDouble).toArray();
+        for (int i=0; i<numArr.length ; i++)
+            if (numArr[i]%3 == 0)
+                System.out.print(numArr[i]+" ");
+
+        in.close();
+
+        // Задание 4
+        // Скобочная последовательность [((())()(())]] не является правильной. В ней нужно заменить предпоследнюю скобку ']' на ')' или первую скобку '(' на '['.
+    }
+}
